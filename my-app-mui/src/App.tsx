@@ -18,10 +18,12 @@ import AddIcon from '@mui/icons-material/Add'
 import BookIcon from '@mui/icons-material/Book'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
+import AssignmentIcon from '@mui/icons-material/Assignment'
 import DiaryCard from './components/DiaryCard'
 import DiaryDialog from './components/DiaryDialog'
 import EmptyState from './components/EmptyState'
 import OrkanChart from './components/OrkanChart'
+import TaskTab from './components/TaskTab'
 import { useDiaryStorage } from './hooks/useDiaryStorage'
 import type { DiaryEntry, MoodEmoji } from './types'
 
@@ -120,6 +122,7 @@ function App() {
           <Tabs value={currentTab} onChange={(_e, value) => setCurrentTab(value)} centered>
             <Tab label="日記帳" icon={<BookIcon />} iconPosition="start" />
             <Tab label="トヨタ株チャート" icon={<TrendingUpIcon />} iconPosition="start" />
+            <Tab label="タスク管理" icon={<AssignmentIcon />} iconPosition="start" />
           </Tabs>
         </Box>
 
@@ -145,6 +148,9 @@ function App() {
 
         {/* トヨタ株チャートタブ */}
         {currentTab === 1 && <OrkanChart />}
+
+        {/* タスク管理タブ */}
+        {currentTab === 2 && <TaskTab />}
       </Box>
 
       {/* フローティングアクションボタン（日記帳タブのみ表示） */}

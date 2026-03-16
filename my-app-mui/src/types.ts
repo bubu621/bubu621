@@ -25,6 +25,29 @@ export const moodOptions: MoodOption[] = [
   { emoji: '🤔', label: '考え中' },
 ]
 
+// タスク管理用の型定義
+export type TaskPriority = 'high' | 'medium' | 'low'
+export type TaskStatus = 'todo' | 'done'
+
+export interface Task {
+  id: string
+  title: string
+  description: string
+  priority: TaskPriority
+  status: TaskStatus
+  category: string
+  tags: string[]
+  dueDate: string | null
+  createdAt: string
+  updatedAt: string
+}
+
+export const PRIORITY_OPTIONS = [
+  { value: 'high',   label: '高', color: 'error' },
+  { value: 'medium', label: '中', color: 'warning' },
+  { value: 'low',    label: '低', color: 'success' },
+] as const
+
 // 株価チャート用の型定義
 export interface PriceData {
   date: string
