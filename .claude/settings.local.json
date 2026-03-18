@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/c/Users/ryota/coding/.claude/worktrees/dreamy-hodgkin/**)",
+      "Bash(python3 -c \":*)"
+    ]
+  }
+}
